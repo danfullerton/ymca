@@ -11,15 +11,21 @@
 </p>
 
 <p>
+  <b>Born on:</b>
+  <%= @profile.born_on %>
+</p>
+
+<p>
   <b>Bmi:</b>
   <%= @profile.bmi %>
 </p>
 
 <p>
-  <b>Born on:</b>
-  <%= @profile.born_on %>
+  <b>YMCA:</b>
+  <%= @profile.ymca_name %>
 </p>
 
-
-<%= link_to 'Edit', edit_profile_path(@profile) %> |
+<% if current_user.profile == @profile %>
+  <%= link_to 'Edit', edit_profile_path(@profile) %> |
+<% end %>
 <%= link_to 'Back', profiles_path %>

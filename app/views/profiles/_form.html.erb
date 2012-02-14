@@ -1,33 +1,15 @@
-<%= form_for(@profile, :as => :user, :url => profile_path(@profile)) do |f| %>
-  <% if @profile.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@profile.errors.count, "error") %> prohibited this profile from being saved:</h2>
+<%= simple_form_for(@profile) do |f| %>
+  <%= f.error_notification %>
 
-      <ul>
-      <% @profile.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+  <div class="inputs">
+    <%= f.input :name %>
+    <%= f.input :bio %>
+    <%= f.input :born_on %>
+    <%= f.input :bmi %>
+    <%= f.input :ymca_name %>
+  </div>
 
-  <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :bio %><br />
-    <%= f.text_area :bio %>
-  </div>
-  <div class="field">
-    <%= f.label :bmi %><br />
-    <%= f.text_field :bmi %>
-  </div>
-  <div class="field">
-    <%= f.label :born_on %><br />
-    <%= f.date_select :born_on %>
-  </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.button :submit %>
   </div>
 <% end %>
