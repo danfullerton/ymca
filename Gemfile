@@ -5,7 +5,7 @@ gem 'rails', '3.2.1'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'sqlite3'
+
 
 
 # Gems used only for assets and not required
@@ -27,6 +27,7 @@ group :development, :test do
   gem 'capybara'
   gem 'guard-rspec'
   gem 'guard-spork'
+  gem 'sqlite3'
 end
 
 gem 'devise'
@@ -34,17 +35,6 @@ gem 'twitter-bootstrap-rails'
 gem 'simple_form'
 
 
-# To use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.0.0'
-
-# To use Jbuilder templates for JSON
-# gem 'jbuilder'
-
-# Use unicorn as the web server
-# gem 'unicorn'
-
-# Deploy with Capistrano
-# gem 'capistrano'
-
-# To use debugger
-# gem 'ruby-debug19', :require => 'ruby-debug'
+group :production do
+gem 'pg'
+end
